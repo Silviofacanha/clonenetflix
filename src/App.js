@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import './App.css'
 
-function App() {
+import Header from './components/Header'
+
+export default () => {
+  const[blackHeader, setBlackHeader] = useState(false)
+  
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true)
+      } else {
+        setBlackHeader(false)
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener)
+ 
+ return () => {
+   window.removeEventListener('scroll', scrollListener)
+   }
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+    <div className="page">
 
-export default App;
+<Header black={blackHeader} />
+
+     <div className="Lists">
+
+    </div>
+    <footer>
+      Feito por Silvio Façanha <br />
+      Direito de iamgen para NetFlix <br />
+      Dados pegos do Site Themoviedb.org
+    </footer>
+    </div>
+      )
+ }
