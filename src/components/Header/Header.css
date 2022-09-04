@@ -1,34 +1,35 @@
 header {
-    position: fixed;
-    z-ibdex: 999;
-    top: 0;
-    left: 0;
-    right: 0;
-    heignt: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-    background: transparent;
-    transition: all ease 0.5s;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30px;
+	background: transparent;
+	transition: all ease 0.5s;
 }
 
 header.black {
     background-color: #141414;
 }
 
-header-logo {
-    heignt: 25px;
+.header-logo {
+    height: 25px;
 }
 
-.header-logo img {
-    heignt: 100%;
+.header-logo img { 
+    height: 100%;
 }
-. header-user {
-    heignt: 35px;
+
+.header-user {
+    height: 35px;
 }
 
 .header-user img {
-    heignt: 100%;
+    height: 100%;
     border-radius: 3px;
 }
