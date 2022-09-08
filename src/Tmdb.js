@@ -1,5 +1,5 @@
-const API_KEY = 'f3d01372f5f16a8e6dfec5a027001b7d'
-const API_BASE = 'https://api.themoviedb.org/3'
+const API_KEY = 'f3d01372f5f16a8e6dfec5a027001b7d';
+const API_BASE = 'https://api.themoviedb.org/3';
 
 
 const basicFetch = async (endpoint) => {
@@ -19,7 +19,7 @@ export default {
             {
                 slug: 'trending',
                 title: 'Recomendados para você',
-                items: await basicFetch(`trending/all/week?language=pt-BR&api_key=${API_KEY}`)
+                items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'toprated',
@@ -51,7 +51,7 @@ export default {
                 title: 'Documentários',
                 items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
             }
-        ]
+        ];
     },
 
     getMovieInfo: async (movieId, type) => {

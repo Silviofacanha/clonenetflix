@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
-import  Tmdb from './Tmdb'
+import React, { useEffect, useState} from 'react';
+import './App.css';
+import  Tmdb from './Tmdb';
 
-import FeaturedMovie from './components/FeaturedMovie'
-import Header from './components/Header'
+import FeaturedMovie from './components/FeaturedMovie';
+import Header from './components/Header';
 
 export default () => {
   const [blackHeader, setBlackHeader] = useState(false)
@@ -12,18 +12,20 @@ export default () => {
 
   useEffect(() => {
     const loadAll = async  () => {
-      let list = await Tmdb.getHomeList()
-      setMovieList(list)
+      let list = await Tmdb.getHomeList();
+      setMovieList(list);
 
       let originals = list.filter(i => i.slug === 'originals')
+      //console.log(originals)
       let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1))
       let chosen = originals[0].items.results[randomChosen]
-      let chosenInfo = await Tmdb.getMovierInfo(chosen.id, 'tv')
-      console.log(chosenInfo)
+      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv')
+      //console.log(choseInfo)
       setFeaturedData(chosenInfo)
     }
-    loadAll()
-  }, [])
+
+    loadAll();
+  }, []);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -47,14 +49,19 @@ export default () => {
 
 <Header black={blackHeader} />
 
-     <div className="Lists">
+{featuredData &&
+<FeaturedMovie item={featuredData}/>
+}
 
-    </div>
+     <section className="Lists">
+
+    </section>
     <footer>
       Feito por Silvio Façanha <br />
-      Direito de imagen para NetFlix <br />
+      Direitos de imagem para NetFlix <br />
       Dados pegos do Site Themoviedb.org
     </footer>
+
     </div>
-      )
+      );
  }
