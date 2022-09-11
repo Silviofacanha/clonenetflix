@@ -3,16 +3,16 @@ const API_BASE = 'https://api.themoviedb.org/3';
 
 
 const basicFetch = async (endpoint) => {
-    const req = await fetch(`${API_BASE}${endpoint}`)
-    const json = await req.json()
-    return json
+    const req = await fetch(`${API_BASE}${endpoint}`);
+    const json = await req.json();
+    return json;
 }
 
 export default {
     getHomeList: async ( ) => {
         return [
             {
-                slug: 'Originals',
+                slug: 'originals',
                 title: 'Origenais do Netflix',
                 items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
