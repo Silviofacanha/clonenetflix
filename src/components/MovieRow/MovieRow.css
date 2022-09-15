@@ -1,14 +1,14 @@
 .movieRow {
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .movieRow h2 {
-    margin: 0 0 0 30px;
+	margin: 0 0 0 30px;
 }
 
-.movieRow--listarea {
+.movirRow--listarea {
     overflow-x: hidden;
-    pedding-left: 30px;
+    padding-left: 30px;
 }
 
 .movieRow--item {
@@ -17,48 +17,48 @@
     cursor: pointer;
 }
 
-.movieRow imag {
+.movieRow--item img {
     width: 100%;
-    transform: scale(0,9);
-    transition: all ease 0.2;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
 }
 
-.movieRow--item  img {
+.movieRow--item img:hover {
     transform: scale(1.0);
 }
 
-.movieRow--rigth,
+.movieRow--right,
 .movieRow--left {
-    position: absolute;
-    width: 40px;
-    heigth: 225px;
-    z-index: 99;
-    display: flax;
-    aling-items: center;
-    justify-content: center;
-    overflow: hidder;
-    background-color: rgba(0, 0, 0.6);
-    cursor: pointer;
-    opacity: 0;
-    transition: all ease 0.2s;
+	position: absolute;
+	width: 40px;
+	height: 225px;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+	opacity: 0;
+	transition: all ease 0.2s;
 }
 
 .movieRow--left {
     left: 0;
 }
 
-.movieRow--rigth {
-    rigth: 0;
+.movieRow--right {
+    right: 0;
 }
 
-.movieRow:hover .movieRow--rigth,
-.movieRow:hover .movieRow--left {
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
     opacity: 1; 
 }
 
 @media (max-width: 760px) {
-    .movieRow--rigth,
-    .movieRow--left {
-        opacity:1;
+    .movieRow--left,
+    .movieRow-right {
+        opacity: 1;
     }
-}
+} 
